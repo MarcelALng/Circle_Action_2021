@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void initState() {
     _animationController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 4000));
+        vsync: this, duration: Duration(milliseconds: 8000));
     _animation = CurvedAnimation(
         parent: _animationController, curve: Curves.bounceInOut);
     // as AnimationController; /*quick fix added by suggestion*/
@@ -35,8 +35,17 @@ class _HomeScreenState extends State<HomeScreen>
             Image.asset('assets/wheel.png'),
             RotationTransition(
               turns: _animation,
-              child: Image.asset('assets/arrow.png'),
-            ),
+              child: GestureDetector(
+                onTap: () {
+                  _animationController.forward();
+                  if (_animationController.isCompleted) {
+                    _animationController.reset();
+                    _animationController.forward();
+                  }
+                },
+                child: Image.asset('assets/arrow.png'),
+              ),
+            )
           ],
         ),
       ),
