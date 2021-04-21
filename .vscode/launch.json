@@ -1,0 +1,56 @@
+
+{
+    // https://stackoverflow.com/questions/51669258/flutter-hot-reload-to-multiple-devices
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Current Device",
+			"request": "launch",
+			"type": "dart"
+		},
+		{
+			"name": "Android Simulator",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "emulator-5554"
+		},
+        {
+			"name": "Huawei P30 lite",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "76Y4C20827015417"
+		},
+		{
+			"name": "iPhone 12 Simulator",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "6EDC2FF6-BF66-4072-909D-DBABBA7E7FC3"
+		},
+		{
+			"name": "iPhone5S",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "adba47588129278bb1f3d914d8029f5819315105"
+		},
+        {
+            "name": "MacOS app",
+            "request": "launch",
+            "type":"dart",
+            "deviceId": "macos",
+        },
+        {
+            "name": "Chrome",
+            "request": "launch",
+            "type":"dart",
+            "deviceId": "chrome",
+        },
+
+	],
+	"compounds": [
+		{
+			"name": "All Devices",
+			"configurations": ["Android Simulator", "iPhone 12 Simulator",
+                "iPhone5S","Huawei P30 lite","MacOS app","Chrome" ]
+		},
+	]
+}
