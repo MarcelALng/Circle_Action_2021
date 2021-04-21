@@ -33,7 +33,10 @@ class _HomeScreenState extends State<HomeScreen>
         child: Stack(
           children: <Widget>[
             Image.asset('assets/wheel.png'),
-            Image.asset('assets/arrow.png'),
+            RotationTransition(
+              turns: _animation,
+              child: Image.asset('assets/arrow.png'),
+            ),
           ],
         ),
       ),
