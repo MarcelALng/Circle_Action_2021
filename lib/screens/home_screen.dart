@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void initState() {
     _animationController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 2000));
+        vsync: this, duration: Duration(milliseconds: 4000));
     _animation = CurvedAnimation(
         parent: _animationController, curve: Curves.bounceInOut);
     // as AnimationController; /*quick fix added by suggestion*/
@@ -27,14 +27,14 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FadeTransition(
-        opacity: _animationController,
-        child: Container(
-          alignment: Alignment.center,
-          child: Text(
-            ("Action!"),
-            style: TextStyle(fontSize: 45.0, color: Colors.black),
-          ),
+      body: Container(
+        alignment: Alignment.center,
+        margin: EdgeInsets.symmetric(horizontal: 10.0),
+        child: Stack(
+          children: <Widget>[
+            Image.asset('assets/wheel.png'),
+            Image.asset('assets/arrow.png'),
+          ],
         ),
       ),
     );
