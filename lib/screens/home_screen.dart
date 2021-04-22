@@ -1,3 +1,4 @@
+import 'package:circle_action2021/controllers/action_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,6 +13,9 @@ class _HomeScreenState extends State<HomeScreen>
 {
   AnimationController _animationController;
   Animation _animation;
+  double _animBegin;
+  double _animEnd;
+  final ActionController _controller = ActionController();
 
   @override
   void initState() {
@@ -20,6 +24,8 @@ class _HomeScreenState extends State<HomeScreen>
     _animation = CurvedAnimation(
         parent: _animationController, curve: Curves.bounceInOut);
     // as AnimationController; /*quick fix added by suggestion*/
+    _animBegin = 0.0; // number beginning position of arrow
+    _animEnd = _controller.getRandomPosition(); // end of position arrow
     _animationController.forward(); // to launch Animation controller
     super.initState();
   }
@@ -34,7 +40,8 @@ class _HomeScreenState extends State<HomeScreen>
           children: <Widget>[
             Image.asset('assets/wheel.png'),
             RotationTransition(
-              turns: Tween(begin: 0.0, end: 0.5).animate(_animation),
+              turns:
+                  Tween(begin: _animBegin, end: _animEnd).animate(_animation),
               child: GestureDetector(
                 onTap: () {
                   _animationController.forward();

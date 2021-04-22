@@ -10,7 +10,7 @@ void main() {
 class CircleAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ActionController().getRandomPosition();
+    // ActionController().getRandomPosition();
     SystemChrome.setEnabledSystemUIOverlays([]);
     return MaterialApp(
       title: "Circle Action",
