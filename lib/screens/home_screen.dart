@@ -45,7 +45,15 @@ class _HomeScreenState extends State<HomeScreen>
               child: GestureDetector(
                 onTap: () {
                   _animationController.forward();
-                  if (_animationController.isCompleted) {
+                  if (_animationController.status ==
+                      AnimationStatus.completed) {
+                    setState(() {
+                      print('ancienne valeur est $_animEnd');
+                      _animBegin = _animEnd - _animEnd.truncate();
+                      //give new value to _animBegin
+                      print('nouvelle valeur $_animBegin');
+                      _animEnd = _controller.getRandomPosition();
+                    });
                     _animationController.reset();
                     _animationController.forward();
                   }
