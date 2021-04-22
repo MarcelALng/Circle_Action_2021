@@ -1,5 +1,6 @@
 import 'package:circle_action2021/controllers/action_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -33,36 +34,53 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        alignment: Alignment.center,
-        margin: EdgeInsets.symmetric(horizontal: 10.0),
-        child: Stack(
-          children: <Widget>[
-            Image.asset('assets/wheel.png'),
-            RotationTransition(
-              turns:
-                  Tween(begin: _animBegin, end: _animEnd).animate(_animation),
-              child: GestureDetector(
-                onTap: () {
-                  _animationController.forward();
-                  if (_animationController.status ==
-                      AnimationStatus.completed) {
-                    setState(() {
-                      print('ancienne valeur est $_animEnd');
-                      _animBegin = _animEnd - _animEnd.truncate();
-                      //give new value to _animBegin
-                      print('nouvelle valeur $_animBegin');
-                      _animEnd = _controller.getRandomPosition();
-                    });
-                    _animationController.reset();
-                    _animationController.forward();
-                  }
-                },
-                child: Image.asset('assets/arrow.png'),
-              ),
-            )
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            "Circle Action!",
+            style: GoogleFonts.bangers(fontSize: 70.0),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          Text(
+            "Start the wheel to get a challenge",
+            style: GoogleFonts.bangers(fontSize: 35.0),
+            textAlign: TextAlign.center,
+          ),
+          Container(
+            alignment: Alignment.center,
+            margin: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Stack(
+              children: <Widget>[
+                Image.asset('assets/wheel.png'),
+                RotationTransition(
+                  turns: Tween(begin: _animBegin, end: _animEnd)
+                      .animate(_animation),
+                  child: GestureDetector(
+                    onTap: () {
+                      _animationController.forward();
+                      if (_animationController.status ==
+                          AnimationStatus.completed) {
+                        setState(() {
+                          print('ancienne valeur est $_animEnd');
+                          _animBegin = _animEnd - _animEnd.truncate();
+                          //give new value to _animBegin
+                          print('nouvelle valeur $_animBegin');
+                          _animEnd = _controller.getRandomPosition();
+                        });
+                        _animationController.reset();
+                        _animationController.forward();
+                      }
+                    },
+                    child: Image.asset('assets/arrow.png'),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
