@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:circle_action2021/models/action_model.dart';
--
 
 class ActionController {
   int colorChoice = 0;
@@ -20,9 +19,9 @@ class ActionController {
     ActionModel(description: "Imiter le cris d'un animal", colorID: 7),
   ];
 
-ActionModel getActions(){
-  return _actionList[colorChoice];
-}
+  ActionModel getActions() {
+    return _actionList[colorChoice];
+  }
 
   String _decodeColor(int color) {
     switch (color) {
@@ -59,9 +58,9 @@ ActionModel getActions(){
   getRandomPosition() {
     int minTurns = 6;
     int maxTurns = 10;
-     colorChoice = Random().nextInt(8);
+    colorChoice = Random().nextInt(8);
     double colorAlgo = (1.0 / 8.0) * colorChoice;
-print(_decodeColor(colorChoice));
+    print(_decodeColor(colorChoice));
     double position = (Random().nextInt(maxTurns - minTurns) + minTurns)
         //calculate turns number
         +

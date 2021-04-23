@@ -28,11 +28,20 @@ class _HomeScreenState extends State<HomeScreen>
     _animBegin = 0.0; // number beginning position of arrow
     _animEnd = _controller.getRandomPosition(); // end of position arrow
     _animationController.forward(); // to launch Animation controller
+    _animationController.addStatusListener((status) {}); // to check if need
+    print('InitState');
     super.initState();
   }
 
   @override
+  void didChangeDependencies() {
+    print('DidChangeDependencies');
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print('Build');
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
