@@ -35,6 +35,19 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   void didChangeDependencies() {
+    _animationController.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        showDialog(
+            context: context,
+            builder: (context) {
+              return SimpleDialog(
+                title: Center(
+                  child: Text("Action!!!"),
+                ),
+              );
+            });
+      }
+    });
     print('DidChangeDependencies');
     super.didChangeDependencies();
   }
