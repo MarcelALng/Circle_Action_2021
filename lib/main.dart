@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:circle_action2021/screens/home_screen.dart';
-import 'package:circle_action2021/controllers/action_controller.dart';
+// import 'package:circle_action2021/controllers/action_controller.dart';
 
 void main() {
   runApp(CircleAction());
@@ -13,6 +13,7 @@ class CircleAction extends StatelessWidget {
     // ActionController().getRandomPosition();
     SystemChrome.setEnabledSystemUIOverlays([]);
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // to hide debug banner
       title: "Circle Action",
       home: HomeScreen(),
     );
