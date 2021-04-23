@@ -70,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   void dispose() {
+    // to stop and destroy? animation controller
     _animationController.dispose();
     super.dispose();
   }
