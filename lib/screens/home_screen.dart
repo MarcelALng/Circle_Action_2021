@@ -45,14 +45,21 @@ class _HomeScreenState extends State<HomeScreen>
             builder: (context) {
               return SimpleDialog(
                 title: Center(
-                  child: Text("Action!!!"),
+                  child: Text(
+                    "Action!!!",
+                    style: GoogleFonts.bangers(fontSize: 40.0),
+                  ),
                 ),
                 children: [
                   Text(
                     _action.description,
                     textAlign: TextAlign.center,
+                    style: GoogleFonts.indieFlower(fontSize: 30.0),
                   ),
                 ],
+                contentPadding: EdgeInsets.all(20.0),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
               );
             });
       }
