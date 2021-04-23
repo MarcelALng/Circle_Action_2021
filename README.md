@@ -1,5 +1,5 @@
 # circle_action2021
-
+![Alt text](assets/sampledemo.gif "Circle action demo picture")
 A new Flutter project.
 
 ## Getting Started
