@@ -1,4 +1,5 @@
 import 'package:circle_action2021/controllers/action_controller.dart';
+import 'package:circle_action2021/models/action_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -37,6 +38,8 @@ class _HomeScreenState extends State<HomeScreen>
   void didChangeDependencies() {
     _animationController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
+        // show dialog when animation arrow is finished
+        ActionModel _action = _controller.getActions();
         showDialog(
             context: context,
             builder: (context) {
@@ -44,6 +47,12 @@ class _HomeScreenState extends State<HomeScreen>
                 title: Center(
                   child: Text("Action!!!"),
                 ),
+                children: [
+                  Text(
+                    _action.description,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               );
             });
       }
