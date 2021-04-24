@@ -6,14 +6,19 @@ class ActionController {
   int colorChoice = 0;
   List<ActionModel> _actionList = [
     ActionModel(
-        description: 'Parler sans utiliser une lettre définie par les autres',
+        description: 'Speak without using a letter defined by others',
         colorID: 0),
-    ActionModel(description: 'Répéter ses paroles en double', colorID: 1),
-    ActionModel(description: 'Danser sur une chanson imposée', colorID: 2),
-    ActionModel(
-        description: 'Faire un discours élogieux sur l’amitié', colorID: 3),
-    ActionModel(description: 'Se déplacer en moonwalk', colorID: 4),
-    ActionModel(description: 'Faire une série de pompe', colorID: 5),
+    // Parler sans utiliser une lettre définie par les autres
+    ActionModel(description: 'Repeat your words without duplicate', colorID: 1),
+    // Répéter ses paroles en double
+    ActionModel(description: 'Dance to an imposed song', colorID: 2),
+    // Danser sur une chanson imposée
+    ActionModel(description: 'Give a glowing speech on friendship', colorID: 3),
+    // Faire un discours élogieux sur l’amitié
+    ActionModel(description: 'Getting around on a moonwalk ', colorID: 4),
+    // Se déplacer en moonwalk
+    ActionModel(description: "Become everyone's Marjordome", colorID: 5),
+    // Devenir le Marjordome de tout le monde
     ActionModel(
         description: 'Devenir le Marjordome de tout le monde', colorID: 6),
     ActionModel(description: "Imiter le cris d'un animal", colorID: 7),
